@@ -1,0 +1,74 @@
+Instructions to use the application
+
+DGE Ebayes Analyzer is an online app to perform an analysis to a  differential expression genes microarrays experiment, 
+currently the app only analize data from Affymetryx CLARIOM S Human Arrays, in the future we will add more types of arrays
+and organisms
+
+This app uses the "Empirical Bayes Method from limma(Linear Models for Microarray Data), R package to calculate the expression
+of the genes
+
+Due to a incompatibilities with the online platform, DGER isn't working online with all funcionalities(GO and GSEA analysis). If you
+need all funcionalities you can install the app in your local machine from github repository and follow the instructions for
+install in your machine, the repository itself have three datasets to run a demo
+
+Also you can download all de data from DGE analysis for further analysis with other tools
+
+How to use it?
+
+This section provides a short guide to run the DGE analysis
+
+Data Input section
+In the  Data input section, the user have to provide the following data to run the  analysis
+In the CEL FILES section, the user have to provide the array data(CELFILES)
+In the Targets section, the user have to provide the customs targets file in csv format
+The custom targets file must be as follows:
+
+-FileNames column with the CEL files name
+-Group column with the group of each sample of the experiment
+-Name column with an alias for CEL files(for better results understanding)
+-PlotColor column indicating wich color the user wants to represent the groups for plotting purposes
+ 
+ Quality Control
+ 
+ The quality control section runs a quality control on the microarray data, on the raw data,  and the normalized data:
+ 
+ Normalization of the samples is done with,"RMA"method.
+ 
+ The quality control includes the following plots:
+ 
+ -Histogram of arrays intensities(only for rawdata)
+ -Boxplot
+ -Dendogram
+ -PCA Analysis
+ 
+ DGE section
+ 
+ DGE section is divided in two sections, one for one group comparison, and another for an experiments with more than two 
+ group to compare(max 6 groups for three comparisons).
+ In the DGE section in the select groups tab the user must indicate on wich groups run the analysis, after loading the groups
+ the app shows the matrix and contrasts designed to perform the ebayes method.
+ 
+ Results section
+ 
+ This section shows the results of the DGE analysis, user must navigate to the proper tab(one or  multiple groups).
+ The One Group Results Tab includes the following outputs:
+ 
+ Ebayes results in table format with the expression of the genes
+ Selected Genes,the table with the selected genes to perform the GO analysis.
+ The User can control the Adjust.P.Value to filter results and the number of genes
+ Volcano plot
+ Heatmap
+ 
+ The multiple groups tab includes the following outputs:
+  
+ Ebayes results in table format. The usar can control wich of the comparations see
+ Selected Genes,the table with the selected genes to perform the GO analysis.
+ The User can control the Adjust.P.Value to filter results and the number of genes
+ Volcano plot
+ Heatmap
+ Summary of decide tests function to select the up and down regulated genes
+ Venn Diagram with the result of decide tests
+ A list with the names of the genes selected by decision tests
+ 
+ All the plots and tables can be dowloaded in .png format for images and .CSV for tables
+            
